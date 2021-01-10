@@ -81,14 +81,6 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "npm run lint -- --fix"
   },
-  "husky": {
-    "hooks": {
-      "pre-push": "npm run test",
-      "pre-commit": "lint-staged",
-      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
   "lint-staged": {
     "./src/**/*.{ts,tsx}": [
       "npm run prettier:check",
