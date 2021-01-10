@@ -77,7 +77,7 @@ module.exports = {
     isDevelopment && new HotModuleReplacementPlugin(),
     isDevelopment && new ReactRefreshWebpackPlugin(),
     new webpack.DefinePlugin({
-      'process.env': JSON.stringify(dotenv.config().parsed),
+      'process.env': isDevelopment ? JSON.stringify(dotenv.config().parsed) : process.env,
     }),
     new ESLintPlugin({
       extensions: ['ts', 'tsx'],
