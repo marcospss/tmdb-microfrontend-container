@@ -1,0 +1,5 @@
+{
+  "collections": "collections@http://localhost:3001/remoteEntry.js",
+  "details": "details@http://localhost:3002/remoteEntry.js",
+  "favorites": "favorites@http://localhost:3003/remoteEntry.js"
+}
