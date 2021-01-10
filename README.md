@@ -1,13 +1,12 @@
 # TMDb - The Movie Database Microfrontend
 
-### Microfrontend Container - Home
-[Demo Cont](https://microfrontend-container.vercel.app/)
+### [Microfrontend Container - Home](https://tmdb-microfrontend.vercel.app)
 
-### Microfrontend Host - Details
-[Demo Aplicação](https://microfrontend-container.vercel.app/)
+### [Microfrontend Host - Details](https://tmdb-microfrontend-details.vercel.app/529203)
 
-### Microfrontend Host - Favorites
-[Demo Aplicação](https://microfrontend-host-marvel.vercel.app/)
+### [Microfrontend Host - Collections](https://tmdb-microfrontend-collections.vercel.app)
+
+### [Microfrontend Host - Favorites](https://tmdb-microfrontend-favorites.vercel.app)
 
 # Ambiente Desenvolvimento
 

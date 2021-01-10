@@ -1,0 +1,5 @@
+{
+  "collections": "collections@https://tmdb-microfrontend-collections.vercel.app/remoteEntry.js",
+  "details": "details@https://tmdb-microfrontend-details.vercel.app/remoteEntry.js",
+  "favorites": "favorites@https://tmdb-microfrontend-favorites.vercel.app/remoteEntry.js"
+}
