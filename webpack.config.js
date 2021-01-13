@@ -1,4 +1,4 @@
-const dotenv = require('dotenv');
+const variables = require('dotenv').config().parsed;
 const webpack = require('webpack');
 const path = require('path');
 const ModuleFederationPlugin = webpack.container.ModuleFederationPlugin;
@@ -9,7 +9,18 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 // https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin
 // const { GenerateSW } = require('workbox-webpack-plugin');
-dotenv.config();
+
+const envKeys = Object.keys(variables).reduce(
+  (prev, next) => {
+    prev[`process.env.${next}`] = JSON.stringify(variables[next]);
+    return prev;
+  },
+  {
+    NAME_APPLICATION: process.env.NAME_APPLICATION,
+    HOST_URL: process.env.HOST_URL,
+    HOST_PORT: process.env.HOST_PORT,
+  },
+);
 
 const dependencies = require('./package.json').dependencies;
 const isDevelopment = process.env.NODE_ENV !== 'production';
@@ -76,9 +87,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     isDevelopment && new HotModuleReplacementPlugin(),
     isDevelopment && new ReactRefreshWebpackPlugin(),
-    new webpack.DefinePlugin({
-      'process.env': isDevelopment ? JSON.stringify(dotenv.config().parsed) : process.env,
-    }),
+    new webpack.DefinePlugin(envKeys),
     new ESLintPlugin({
       extensions: ['ts', 'tsx'],
       exclude: 'node_modules',
